@@ -26,16 +26,4 @@ def login():
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
-    if request.method == "POST":
-        inputDetail = {
-            'username': request.json['username'],
-            'password': request.json['password']
-        }
-
-        user = db.find_one({'username': inputDetail['username']})
-        return jsonify({
-            'username': user['username'],
-            'name': user['name'],
-            'email': user['email'],
-            'password': user['password']
-        })
+    pass

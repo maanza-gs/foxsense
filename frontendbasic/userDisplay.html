@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Calibri' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Happy Monkey' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="import" href="./banner.html">
+    <title>Author/ User Page</title>
+    <style>
+        *{
+            font-family: 'montserrat';
+        }
+
+        #more{
+            display: none;
+        }
+
+        #lessbtn{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="pagecontent" style="display: grid;">
+        <div id="banner" style="margin-top: 0;" ></div>
+        <div class="container" style="display:flex;">
+            <div class="box1" style="width: 35%; height: 75vh; justify-content: center; flex-direction: column; 
+                margin-top: 100px; margin-left: auto; margin-right: auto;">
+                <div><h3 align="center" >Rick Riordan </h3></div>
+                <div style="margin-left: 7.5vw; ">
+                    <img src="./images/rr.jpeg" style="width: 95%; margin-top: 50px; justify-content: center; border-radius: 100%;">
+                    <br/><br/>
+
+                </div>
+            </div>
+            <div class="box2" style="width: 50%; background: #ebe6e6; margin-top: 100px; margin-left: auto; margin-right: auto;">
+                <h3 style="width: 80%; margin-left: 30px;">Description:</h3>
+                <p style="font-size: 15px; width: 80%; margin-left: 30px;"><br>
+                    Richard Russell Riordan, Jr. is an American author, best known for writing the Percy Jackson & the Olympians series. 
+                    <button onclick="expandDesc()" id="morebtn" style="border: none; background: none; 
+                    color: #ff896b; text-decoration: underline; cursor: pointer;">Read more</button>
+                    <span id="more">Riordan's books have been translated into forty-two languages and sold more than thirty million copies in the United States.                    </span>
+                <button onclick="expandDesc()" id="lessbtn" style="border: none; background: none; cursor: pointer; color: #ff896b; 
+                    text-decoration: underline;">Read Less</button> </p>
+
+                    <button type="submit" style="margin-left:25px ;height: 25px; width:10%;background: #ff896b; border: none; 
+                        font-size: 15px;color: white; cursor: pointer; border-radius: 10px;">Follow +</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+    $("#banner").load("banner.html"); 
+    });
+
+    function expandDesc() {
+    var lessbtn = document.getElementById("lessbtn");
+    var morebtn = document.getElementById("morebtn");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("morebtn");
+
+    if (lessbtn.style.display === "inline") {
+        morebtn.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+        lessbtn.style.display = "none";
+    } else {
+        morebtn.style.display = "none";
+        lessbtn.style.display = "inline";
+        moreText.style.display = "inline";
+    }
+    } 
+</script>
+</html>
