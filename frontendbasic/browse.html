@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Calibri' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Happy Monkey' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="import" href="banner.html">
+    <title>Home Page</title>
+    <style>
+        *{
+            font-family: 'montserrat';
+        }
+
+        select{
+            background-color: #ff896b;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            height:25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pagecontent" style="display: grid;">
+        <div id="banner" style="margin-top: 0; padding: 0;" ></div>
+        <div class="menu" style="margin-top: 50px; display:flex; justify-content: space-between; width: 500px; margin-left: auto; margin-right: auto;">
+            <select>
+                <option>Sort: Popular</option>
+                <option>Sort: Alphabetical (A-Z)</option>
+                <option>Sort: Alphabetical (Z-A)</option>
+            </select>
+            <select>
+                <option>Filter: Ratings</option>
+            </select>
+        </div>
+        <div class="content" style="margin-top: 20px; margin-left: auto; margin-right: auto;height:85vh;width: 99%;">
+            <iframe src="./displaybooks.html" style="border:none;height:100%;width: 100%;"></iframe>
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+    $("#banner").load("banner.html"); 
+    });
+</script>
+</html>

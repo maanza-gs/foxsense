@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Calibri' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Happy Monkey' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="import" href="./banner.html">
+    <title>Induvidual Book Display Page</title>
+    <style>
+        *{
+            font-family: 'montserrat';
+        }
+
+        #more{
+            display: none;
+        }
+
+        #lessbtn{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="pagecontent" style="display: grid;">
+        <div id="banner" style="margin-top: 0;" ></div>
+        <div class="container" style="display:flex;">
+            <div class="box1" style="width: 25%; height: 75vh;background: #ebe6e6; justify-content: center; flex-direction: column; 
+                margin-top: 100px; margin-left: auto; margin-right: auto;">
+                <div><h3 align="center" >Turtles All the Way Down <br/><p align="center" >By John Green</p></h3></div>
+                <div style="margin-left: 7.5vw; ">
+                    <img src="./images/7.jpg" style="width: 50%; height: 50%; margin-top: 50px; justify-content: center;">
+                    <br/><br/>
+                    <a href = "#"><select style="height: 35px; width:50%; background: #ff896b; border: none; 
+                    font-size: 15px;color: white; cursor: pointer;">
+                        <option>Want To Read</option>
+                        <option>Currently Reading</option>
+                        <option>Completed</option>
+                    </select></a>
+                </div>
+            </div>
+
+            <div class="box2" style="width: 70%; background: #ebe6e6; margin-top: 100px; margin-left: auto; margin-right: auto;">
+                <h3 style="width: 80%; margin-left: 30px;">Description:</h3>
+                <p style="font-size: 15px; width: 80%; margin-left: 30px;"><br>
+                    It all begins with a fugitive billionaire and the promise of a cash reward. Turtles All the Way Down is about 
+                    <button onclick="expandDesc()" id="morebtn" style="border: none; background: none; 
+                    color: #ff896b; text-decoration: underline; cursor: pointer;">Read more</button>
+                    <span id="more">lifelong friendship, the intimacy of an unexpected reunion, Star Wars fan fiction, and tuatara. But at its heart is Aza Holmes, a young woman navigating daily 
+                        existence within the ever-tightening spiral of her own thoughts.In his long-awaited return, John Green shares Aza's story with shattering, unflinching clarity. 
+                    </span>
+                <button onclick="expandDesc()" id="lessbtn" style="border: none; background: none; cursor: pointer; color: #ff896b; 
+                    text-decoration: underline;">Read Less</button> </p>
+
+                <div class="reviewBox" style="margin-left: 30px; height: 50%;">
+                    <div class="reviewControl" style="display: flex;">
+                        <h5 style="width: 80%; ">Write a Review</h5></div>
+                    <textarea type="text" style="height: 90%; width: 80%;"> </textarea><br><br>
+                    <button type="submit" style="height: 25px; width:10%;background: #ff896b; border: none; 
+                        font-size: 15px;color: white; cursor: pointer; border-radius: 10px;">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+    $("#banner").load("banner.html"); 
+    });
+
+    function expandDesc() {
+    var lessbtn = document.getElementById("lessbtn");
+    var morebtn = document.getElementById("morebtn");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("morebtn");
+
+    if (lessbtn.style.display === "inline") {
+        morebtn.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+        lessbtn.style.display = "none";
+    } else {
+        morebtn.style.display = "none";
+        lessbtn.style.display = "inline";
+        moreText.style.display = "inline";
+    }
+    } 
+</script>
+</html>
